@@ -1,3 +1,4 @@
+import { SideBarOpen } from "@/shared/constants";
 import { atom, useRecoilState } from "recoil";
 
 const searchModalOpenedState = atom({
@@ -9,9 +10,6 @@ export const useSearchModal = () => {
 
     return { isOpened, setOpen };
 };
-
-const SideBarOpen = "sidebar-open";
-export const SideBarClassName = "body." + SideBarOpen;
 
 export const handleSidebar = (open: boolean) => {
     if (open) document.body.classList.add(SideBarOpen);

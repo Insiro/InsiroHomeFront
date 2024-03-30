@@ -1,5 +1,5 @@
-import { SideBarClassName } from "@/features/header/state";
 import { SidebarItems } from "@/shared/SidebarItem";
+import { MediaQuery, SideBarSelector } from "@/shared/constants";
 import { Header } from "@/widgets/LayoutHeader";
 import { SpacialControl } from "@/widgets/LayoutSpacialControl";
 import { SearchModal } from "@/widgets/LayoutSpacialControl/ui/SearchModal/SearchModal";
@@ -18,8 +18,8 @@ const PageSection = styled.div`
     min-height: 100%;
     padding-left: 30px;
     overflow-y: scroll;
-    @media only screen and (max-width: 991px) {
-        ${SideBarClassName}& {
+    ${MediaQuery.Max991} {
+        ${SideBarSelector}& {
             display: none;
         }
     }

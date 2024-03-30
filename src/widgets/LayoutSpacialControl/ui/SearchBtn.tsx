@@ -1,5 +1,6 @@
 import { useSearchModal } from "@/features/header/state";
 import SearchIcon from "@/shared/assets/search-icon.png";
+import { MediaQuery } from "@/shared/constants";
 import styled from "@emotion/styled";
 import { Image } from "react-bootstrap";
 
@@ -10,10 +11,10 @@ const Wrapper = styled.div`
     background: #323232;
     text-align: center;
     cursor: pointer;
-    @media only screen and (max-width: 991px) {
+    ${MediaQuery.Max991} {
         width: 50%;
     }
-    @media only screen and (max-width: 767px) {
+    ${MediaQuery.Max767} {
         padding-top: 18px;
     }
 `;

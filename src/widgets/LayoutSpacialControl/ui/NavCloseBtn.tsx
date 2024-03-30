@@ -1,4 +1,5 @@
-import { SideBarClassName, handleSidebar } from "@/features/header/state";
+import { handleSidebar } from "@/features/header/state";
+import { MediaQuery, SideBarSelector } from "@/shared/constants";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -47,15 +48,15 @@ const WrapperStyle = css`
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    ${MediaQuery.Min768Max991} {
         display: block;
         padding-top: 25px;
         padding-left: 30px;
     }
 
-    @media only screen and (max-width: 767px) {
+    ${MediaQuery.Max767} {
         display: block;
-        ${SideBarClassName} & {
+        ${SideBarSelector} & {
             display: none;
         }
     }

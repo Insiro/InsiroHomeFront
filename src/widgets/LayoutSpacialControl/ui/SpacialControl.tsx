@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { SearchBtn } from "./SearchBtn";
 import { NavCloseBtn } from "./NavCloseBtn";
+import { MediaQuery } from "@/shared/constants";
 
 const ControlWrapper = styled.div`
     position: fixed;
@@ -9,7 +10,7 @@ const ControlWrapper = styled.div`
     top: 0;
     right: 0;
     z-index: 999;
-    @media screen and (min-width: 768px) and (max-width: 991px) {
+    ${MediaQuery.Min768Max991} {
         width: 200px;
         height: 85px;
         display: -ms-flex;
@@ -17,7 +18,7 @@ const ControlWrapper = styled.div`
         display: -ms-flexbox;
         display: flex;
     }
-    @media only screen and (max-width: 767px) {
+    ${MediaQuery.Max767} {
         width: 150px;
         height: 65px;
         display: -ms-flex;

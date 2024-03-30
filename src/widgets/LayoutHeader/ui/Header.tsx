@@ -1,7 +1,8 @@
+import { handleSidebar } from "@/features/header/state";
 import { SidebarItems } from "@/shared/SidebarItem";
-import { SideBar } from "./Sidebar";
-import { SideBarClassName, handleSidebar } from "@/features/header/state";
+import { MediaQuery, SideBarSelector } from "@/shared/constants";
 import { css } from "@emotion/react";
+import { SideBar } from "./Sidebar";
 
 const HeaderSectionStyle = css`
     width: 455px;
@@ -13,13 +14,13 @@ const HeaderSectionStyle = css`
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    ${MediaQuery.Min992Max1199} {
         width: 300px;
     }
-    @media only screen and (max-width: 991px) {
+    ${MediaQuery.Max991} {
         width: 0px;
         overflow-y: auto;
-        ${SideBarClassName} & {
+        ${SideBarSelector} & {
             width: 100%;
         }
     }
@@ -42,10 +43,10 @@ const CloseBtn = () => {
                 right: 25px;
                 top: 10px;
                 color: #999;
-                @media only screen and (max-width: 991px) {
+                ${MediaQuery.Max991} {
                     display: none;
                     position: fixed;
-                    ${SideBarClassName} & {
+                    ${SideBarSelector} & {
                         display: block;
                     }
                 }
