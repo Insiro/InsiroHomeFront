@@ -1,4 +1,4 @@
-import { SidebarItems } from "@/shared/SidebarItem";
+import { SidebarItems } from "@/shared/type/SidebarItem";
 import { MediaQuery, SideBarSelector } from "@/shared/constants";
 import { Header } from "@/widgets/LayoutHeader";
 import { SpacialControl } from "@/widgets/LayoutSpacialControl";

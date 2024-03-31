@@ -1,4 +1,4 @@
-import { SidebarItems } from "@/shared/SidebarItem";
+import { SidebarItems } from "@/shared/type/SidebarItem";
 import MenuIcon from "@/shared/assets/menu-icon.png";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";

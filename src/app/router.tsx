@@ -1,6 +1,6 @@
 import { Home } from "@/pages/Home";
 import { NotFound } from "@/pages/NotFound";
-import { SidebarItems } from "@/shared/SidebarItem";
+import { SidebarItems } from "@/shared/type/SidebarItem";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./layout";
 
