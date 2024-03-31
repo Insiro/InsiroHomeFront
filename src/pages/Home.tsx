@@ -1,34 +1,22 @@
-import { ReactNode } from "react";
+import { TextBlock } from "@/widgets/Text";
+import { BlockTitle } from "@/widgets/Text/ui/SmallTitle";
 
-const SmallTitle = (props: { children: ReactNode }) => {
-    return (
-        <h3
-            style={{
-                textDecoration: "underline",
-                textDecorationColor: "grey",
-                textUnderlineOffset: "under",
-            }}
-        >
-            {props.children}
-        </h3>
-    );
-};
 export const Home = () => {
     return (
-        <div className="content-warp">
-            <div className="row">
+        <TextBlock style={{ padding: "0 15px", paddingTop: "160px" }}>
+            <div className="row" style={{ maxWidth: "100%" }}>
                 <div className="col-xl-6 p-0">
-                    <div className="content-text">
+                    <TextBlock>
                         <span>about me</span>
                         <h2>Profile</h2>
                         <p>will be fill</p>
-                        <div className="content-text">
-                            <SmallTitle>Usable Languages</SmallTitle>
+                        <TextBlock>
+                            <BlockTitle>Usable Languages</BlockTitle>
                             <br />
                             <p>
                                 <li>lang 1</li>
                             </p>
-                            <SmallTitle>Skills</SmallTitle>
+                            <BlockTitle>Skills</BlockTitle>
                             <br />
 
                             <li>
@@ -37,10 +25,10 @@ export const Home = () => {
                             </li>
 
                             <p></p>
-                        </div>
-                    </div>
+                        </TextBlock>
+                    </TextBlock>
                 </div>
             </div>
-        </div>
+        </TextBlock>
     );
 };

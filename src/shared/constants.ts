@@ -7,4 +7,5 @@ export const MediaQuery = {
     Min768Max991: `@media screen and (min-width: 768px) and (max-width:991px)`,
     Max767: `@media only screen and (max-width: 767px) `,
     Max991: `@media only screen and (max-width: 991px)`,
+    Max1199: `@media only screen and (max-width: 1199px)`,
 };

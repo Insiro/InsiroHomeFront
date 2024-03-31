@@ -8,13 +8,12 @@ const WrapperStyle = css`
     height: 100%;
     left: 0;
     top: 0;
-    visibility: visible;
-    opacity: 1;
     background: #000;
     z-index: 99999;
     transition: opacity 1s ease-out, visibility 1s ease-out;
 `;
 const WrapperClosedStyle = css`
+    ${WrapperStyle}
     visibility: hidden;
     opacity: 0;
 `;
@@ -23,7 +22,7 @@ export const SearchModal = () => {
     const ModalState = useSearchModal();
 
     return (
-        <div css={ModalState.isOpened ? { ...WrapperStyle } : { ...WrapperStyle, ...WrapperClosedStyle }}>
+        <div css={ModalState.isOpened ? WrapperStyle : WrapperClosedStyle}>
             <div style={{ alignItems: "center", justifyContent: "center", display: "flex", height: "100%" }}>
                 <ModelClose onClick={() => ModalState.setOpen(false)} />
                 <SearchForm />
