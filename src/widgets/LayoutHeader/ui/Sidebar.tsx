@@ -31,7 +31,7 @@ const Item = (props: { children: ReactNode; href: string }) => {
 
     return (
         <>
-            <li css={ItemStyle} style={isActive ? { borderBottom: " 2px solid #000000" } : {}}>
+            <li css={[ItemStyle, isActive && { borderBottom: "2px solid #000000" }]}>
                 <Link to={props.href} style={{ textDecoration: "none", color: "#323232" }}>
                     {props.children}
                 </Link>
