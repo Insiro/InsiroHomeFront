@@ -13,7 +13,11 @@ const sidebarRoute = Object.keys(sidebarItems).map((key) => sidebarItems[key]);
 const router = createBrowserRouter([
     {
         path: "/",
-        errorElement: <NotFound />,
+        errorElement: (
+            <Layout items={sidebarItems}>
+                <NotFound />
+            </Layout>
+        ),
         children: sidebarRoute,
         element: (
             <Layout items={sidebarItems}>
