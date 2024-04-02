@@ -7,15 +7,13 @@ import { Image } from "react-bootstrap";
 const Wrapper = styled.div`
     display: block;
     height: 100%;
-    padding-top: 30px;
+    padding-top: 0px;
+    align-content: center;
     background: #323232;
     text-align: center;
     cursor: pointer;
     ${MediaQuery.Max991} {
         width: 50%;
-    }
-    ${MediaQuery.Max767} {
-        padding-top: 18px;
     }
 `;
 

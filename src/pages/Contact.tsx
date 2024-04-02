@@ -2,7 +2,7 @@ import { MediaQuery } from "@/shared/constants";
 import { Profile } from "@/shared/config";
 import { TextBlock } from "@/widgets/Text";
 import { css } from "@emotion/react";
-import { Form } from "@/widgets/Form/ui/Form";
+import { Form } from "@/widgets/Form";
 import { buttonStyle } from "@/shared/style";
 import styled from "@emotion/styled";
 

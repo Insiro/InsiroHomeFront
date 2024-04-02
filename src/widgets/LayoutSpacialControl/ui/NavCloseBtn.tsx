@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 const NsButton = styled.div`
     display: block;
     width: 40px;
-    height: 31px;
+    height: 30%;
     padding-top: 14px;
     position: relative;
     cursor: pointer;
@@ -41,7 +41,7 @@ const NsButton = styled.div`
 `;
 const WrapperStyle = css`
     display: none;
-    width: 50%;
+    width: 33%;
     background: #fff;
     padding-top: 17px;
     padding-left: 15px;
