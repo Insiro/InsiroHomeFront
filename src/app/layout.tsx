@@ -17,7 +17,8 @@ const PageSection = styled.div`
     flex-grow: 1;
     min-height: 100%;
     padding-left: 30px;
-    overflow-y: scroll;
+    padding-right: 30px;
+    box-sizing: border-box;
     ${MediaQuery.Max991} {
         ${SideBarSelector}& {
             display: none;
@@ -30,7 +31,7 @@ export const Layout = (props: Props) => {
         <>
             <SpacialControl />
 
-            <div style={{ display: "flex", flexFlow: "row", width: "100%", height: "100%" }}>
+            <div style={{ display: "flex", flexFlow: "row", width: "100%", height: "100%", alignItems: "stretch" }}>
                 <Header sidebarItems={props.items} />
                 <PageSection>{props.children}</PageSection>
             </div>
