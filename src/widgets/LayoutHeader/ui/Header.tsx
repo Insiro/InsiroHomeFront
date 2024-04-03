@@ -1,6 +1,6 @@
 import { handleSidebar } from "@/features/header/state";
 import { SidebarItems } from "@/shared/type/SidebarItem";
-import { MediaQuery, SideBarSelector } from "@/shared/constants";
+import { MediaQuery, SideBarSelector } from "@/shared/ui/constants";
 import { css } from "@emotion/react";
 import { SideBar } from "./Sidebar";
 

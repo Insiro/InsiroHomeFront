@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/shared/constants";
+import { MediaQuery } from "@/shared/ui/constants";
 import styled from "@emotion/styled";
 export const TextBlock = styled.div`
     padding-left: 87px;

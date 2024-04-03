@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { MediaQuery } from "@/shared/constants";
+import { MediaQuery } from "@/shared/ui/constants";
 import { FilterItem, FilterResetItem } from "./FilterItem";
 
 const FilterStyle = css`

@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/shared/constants";
+import { MediaQuery } from "@/shared/ui/constants";
 import { css } from "@emotion/react";
 import { ReactNode, useMemo } from "react";
 

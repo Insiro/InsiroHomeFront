@@ -1,11 +1,11 @@
-import { Home } from "@/pages/Home";
-import { NotFound } from "@/pages/NotFound";
-import { ProjectGallery } from "@/pages/project/ProjectGallery";
-import { Contact } from "@/pages/Contact";
+import { Home } from "@/pages/HomePage";
+import { NotFound } from "@/pages/NotFoundPage";
+import { ProjectGallery } from "@/pages/ProjectPage/ProjectGalleryPage";
+import { Contact } from "@/pages/ContactPage";
 import { SidebarItems } from "@/shared/type/SidebarItem";
 import { Outlet, RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./layout";
-import { ProjectDetail } from "@/pages/project/ProjectDetail";
+import { ProjectDetail } from "@/pages/ProjectPage/ProjectDetailPage";
 
 const sidebarItems: SidebarItems = {
     home: { path: "/", element: <Home /> },

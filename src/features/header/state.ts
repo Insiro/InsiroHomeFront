@@ -1,4 +1,4 @@
-import { SideBarOpen } from "@/shared/constants";
+import { SideBarOpen } from "@/shared/ui/constants";
 import { atom, useRecoilState } from "recoil";
 
 const searchModalOpenedState = atom({

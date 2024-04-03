@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/shared/constants";
+import { MediaQuery } from "@/shared/ui/constants";
 import { ContentWrapper } from "@/shared/style";
 import { Marked } from "@/widgets/Marked";
 import { PostHeaderWrapper, PostMeta } from "@/widgets/Post";
@@ -21,6 +21,26 @@ const Wrapper = styled.div`
     }
 `;
 
+const testContent = `
+# Title
+## Title2
+### title3
+#### title4
+##### title5
+###### title6
+- item
+1. item
+\`\`\`js
+CodeArea(){
+const a = 10;
+}
+\`\`\`
+\`notation\`
+|table|a|
+|---|-|
+|ccc|c|
+`;
+
 export const ProjectDetail = () => {
     return (
         <Wrapper>
@@ -34,7 +54,7 @@ export const ProjectDetail = () => {
 
             <SpacialSpacer />
             <ContentWrapper>
-                <Marked value={""} />
+                <Marked value={testContent} />
             </ContentWrapper>
         </Wrapper>
     );
