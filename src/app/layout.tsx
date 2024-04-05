@@ -1,5 +1,5 @@
 import { SidebarItems } from "@/shared/type/SidebarItem";
-import { MediaQuery, SideBarSelector } from "@/shared/constants";
+import { MediaQuery, SideBarSelector } from "@/shared/ui/constants";
 import { Header } from "@/widgets/LayoutHeader";
 import { SpacialControl } from "@/widgets/LayoutSpacialControl";
 import { SearchModal } from "@/widgets/LayoutSpacialControl/ui/SearchModal/SearchModal";
