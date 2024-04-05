@@ -1,12 +1,12 @@
 export interface WithId {
-    id: string;
+    id: uuid;
 }
 export interface WithLongId {
     id: long;
 }
 
 export interface CreatedAt {
-    createdAt: Date;
+    createdAt: DateString;
 }
 export interface WithStatus {
     status: string;
