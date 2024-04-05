@@ -1,9 +1,14 @@
-import { MediaQuery } from "@/shared/ui/constants";
+import styled from "@emotion/styled";
+import { useEffect, useMemo } from "react";
+import { redirect, useLocation } from "react-router-dom";
+
+import { useProject } from "@/features/project";
 import { ContentWrapper } from "@/shared/style";
+import { MediaQuery } from "@/shared/ui/constants";
 import { Marked } from "@/widgets/Marked";
 import { PostHeaderWrapper, PostMeta } from "@/widgets/Post";
 import { SpacialSpacer } from "@/widgets/SpacialSpacer";
-import styled from "@emotion/styled";
+
 const Wrapper = styled.div`
     background: #f7f9fb;
     padding-left: 86px;
@@ -21,40 +26,34 @@ const Wrapper = styled.div`
     }
 `;
 
-const testContent = `
-# Title
-## Title2
-### title3
-#### title4
-##### title5
-###### title6
-- item
-1. item
-\`\`\`js
-CodeArea(){
-const a = 10;
-}
-\`\`\`
-\`notation\`
-|table|a|
-|---|-|
-|ccc|c|
-`;
-
 export const ProjectDetail = () => {
+    const location = useLocation();
+    const { project, loadProject } = useProject();
+
+    const id = useMemo(() => location.pathname.split("/").at(-1), [location.pathname]);
+    useEffect(() => {
+        (async (id?: string) => {
+            if (id) loadProject(id);
+            else redirect("/404");
+        })(id);
+    }, [id]);
+
     return (
         <Wrapper>
             <PostHeaderWrapper>
-                <h1>Title</h1>
+                <h1>{project.title}</h1>
                 <PostMeta>
-                    <span>MetaData</span>
-                    <span>MetaData2</span>
+                    <span>{project.createdAt}</span>
+                    <span>{project.status}</span>
+                    {project.type?.map((it) => (
+                        <span key={it.id}>{it.name}</span>
+                    ))}
                 </PostMeta>
             </PostHeaderWrapper>
 
             <SpacialSpacer />
             <ContentWrapper>
-                <Marked value={testContent} />
+                <Marked value={project.content} />
             </ContentWrapper>
         </Wrapper>
     );

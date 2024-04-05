@@ -4,6 +4,7 @@ interface Base extends WithId {
     title: string;
     content: string;
     type?: ProjectType[];
+    icon?: string; //TODO: Server must Impl Icon Path on DB
 }
 
 export interface Project extends Base, CreatedAt, WithStatus {}
@@ -16,3 +17,10 @@ export interface UpdateProject extends WithDeleteFile, Status {
     content?: string;
     types?: string[];
 }
+export const defaultProject: Project = {
+    title: "",
+    createdAt: "",
+    id: "",
+    content: "",
+    status: "",
+};

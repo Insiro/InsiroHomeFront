@@ -23,10 +23,8 @@ export const PostMeta = ({ children }: { children?: ReactNode }) => {
         <Wrapper>
             {childList.length != 0 && <ItemWrapper style={{ paddingLeft: "0px" }}>{childList[0]}</ItemWrapper>}
 
-            {childList.slice(1).map((item) => (
-                <>
-                    | <ItemWrapper>{item}</ItemWrapper>
-                </>
+            {childList.slice(1).map((item, idx) => (
+                <ItemWrapper key={idx}> | {item}</ItemWrapper>
             ))}
         </Wrapper>
     );

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+
 import { MediaQuery } from "@/shared/ui/constants";
 import { FilterItem, FilterResetItem } from "./FilterItem";
 
@@ -19,13 +20,8 @@ const FilterStyle = css`
     }
 `;
 
-type GalleryTag = {
-    value: string;
-    title: string;
-};
-
 type GalleryFilterProps = {
-    items: GalleryTag[];
+    items: string[];
     selected: Set<string>;
     selector: React.Dispatch<React.SetStateAction<Set<string>>>;
     multiselect?: boolean;
@@ -48,8 +44,8 @@ export const GalleryFilter = ({ items, selected, selector, multiselect }: Galler
                 All
             </FilterResetItem>
             {items.map((it) => (
-                <FilterItem name={it.value} key={it.value} selected={selected} onClick={() => selection(it.value)}>
-                    {it.title}
+                <FilterItem name={it} key={it} selected={selected} onClick={() => selection(it)}>
+                    {it}
                 </FilterItem>
             ))}
         </ul>
