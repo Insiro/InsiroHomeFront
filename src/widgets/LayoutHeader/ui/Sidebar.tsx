@@ -1,10 +1,10 @@
-import { SidebarItems } from "@/shared/type/SidebarItem";
-import MenuIcon from "@/shared/assets/menu-icon.png";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ReactNode } from "react";
-import { Image } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+
+import MenuIcon from "@/shared/assets/menu-icon.png";
+import { SidebarItems } from "@/shared/type/SidebarItem";
 
 const ItemStyle = css`
     display: inline-block;
@@ -55,7 +55,7 @@ export const SideBar = (props: { sidebarItems: SidebarItems }) => {
                 <h1>Insiro</h1>
             </Link>
 
-            <Image src={MenuIcon} style={{ paddingLeft: "63px", marginBottom: "29px" }} />
+            <img src={MenuIcon} style={{ paddingLeft: "63px", marginBottom: "29px" }} />
             <nav>
                 <ul style={{ listStyle: "none", marginBottom: "65px" }}>
                     {Object.keys(props.sidebarItems).map((key) => (

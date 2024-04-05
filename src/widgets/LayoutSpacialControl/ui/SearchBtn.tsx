@@ -1,8 +1,8 @@
+import styled from "@emotion/styled";
+
 import { useSearchModal } from "@/features/header/state";
 import SearchIcon from "@/shared/assets/search-icon.png";
 import { MediaQuery } from "@/shared/ui/constants";
-import styled from "@emotion/styled";
-import { Image } from "react-bootstrap";
 
 const Wrapper = styled.div`
     display: block;
@@ -22,7 +22,7 @@ export const SearchBtn = () => {
 
     return (
         <Wrapper onClick={() => openSearchModal.setOpen(true)}>
-            <Image src={SearchIcon} />
+            <img src={SearchIcon} />
         </Wrapper>
     );
 };

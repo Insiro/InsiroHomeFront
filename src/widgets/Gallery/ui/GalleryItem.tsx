@@ -1,7 +1,7 @@
-import { buttonStyle } from "@/shared/style";
 import { css } from "@emotion/react";
-import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import { buttonStyle } from "@/shared/style";
 
 export type GalleryItemProps = {
     to: string;
@@ -70,8 +70,8 @@ const ItemStyle = css`
 export const GalleryItem = (props: GalleryItemProps | FilteredItemProps) => {
     return (
         <div css={[ItemStyle]} className="gallery-item">
-            <h3>{props.title}</h3>
-            {props.image != null ? <Image src={props.image} alt="project icon" style={{ maxHeight: "100%" }} /> : ""}
+            <h3 style={{ textAlign: "center" }}>{props.title}</h3>
+            {props.image != null ? <img src={props.image} alt="project icon" style={{ maxHeight: "100%", width: "100%" }} /> : ""}
 
             <div className="hover-links">
                 <Link to={props.to} css={buttonStyle.Light}>
