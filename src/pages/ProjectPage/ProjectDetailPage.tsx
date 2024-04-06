@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-import { useEffect, useMemo } from "react";
-import { redirect, useLocation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
-import { useProject } from "@/features/project";
+import { Project } from "@/entities/projects";
 import { ContentWrapper } from "@/shared/style";
 import { MediaQuery } from "@/shared/ui/constants";
 import { Marked } from "@/widgets/Marked";
@@ -27,16 +26,7 @@ const Wrapper = styled.div`
 `;
 
 export const ProjectDetail = () => {
-    const location = useLocation();
-    const { project, loadProject } = useProject();
-
-    const id = useMemo(() => location.pathname.split("/").at(-1), [location.pathname]);
-    useEffect(() => {
-        (async (id?: string) => {
-            if (id) loadProject(id);
-            else redirect("/404");
-        })(id);
-    }, [id]);
+    const project = useLoaderData() as Project.Project;
 
     return (
         <Wrapper>

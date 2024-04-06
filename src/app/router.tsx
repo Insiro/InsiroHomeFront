@@ -1,23 +1,26 @@
 import { Home } from "@/pages/HomePage";
-import { NotFound } from "@/pages/NotFoundPage";
 import { ProjectGallery } from "@/pages/ProjectPage/ProjectGalleryPage";
 import { Contact } from "@/pages/ContactPage";
 import { SidebarItems } from "@/shared/type/SidebarItem";
 import { Outlet, RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Layout } from "./layout";
 import { ProjectDetail } from "@/pages/ProjectPage/ProjectDetailPage";
-
+import { Layout } from "./layout";
+import { ErrorPage } from "@/pages/ErrorPage";
+import { loadProject, loadProjectList } from "@/pages/ProjectPage/projectLoader";
 const sidebarItems: SidebarItems = {
     home: { path: "/", element: <Home /> },
-    project: { path: "/projects", element: <ProjectGallery /> },
+    project: { path: "/projects", element: <ProjectGallery />, loader: loadProjectList },
     contact: { path: "/contact", element: <Contact /> },
 };
 
 const sidebarRoute = Object.keys(sidebarItems).map((key) => sidebarItems[key]);
 
 const routes: RouteObject[] = [
-    { path: "/404", element: <NotFound /> },
-    { path: "projects/:projectId", element: <ProjectDetail /> },
+    {
+        path: "projects/:id",
+        element: <ProjectDetail />,
+        loader: loadProject,
+    },
 ];
 
 const router = createBrowserRouter([
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         errorElement: (
             <Layout items={sidebarItems}>
-                <NotFound />
+                <ErrorPage />
             </Layout>
         ),
         children: routes.concat(sidebarRoute),

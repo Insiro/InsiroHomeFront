@@ -1,22 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-import { useProjectList, useProjectTypes } from "@/features/project";
+import { Project } from "@/entities/projects";
 import { ContentWrapper } from "@/shared/style";
 import { Gallery, GalleryFilter } from "@/widgets/Gallery";
 import { GalleryItemProps } from "@/widgets/Gallery/ui/GalleryItem";
 import { SpacialSpacer } from "@/widgets/SpacialSpacer";
+import { useLoaderData } from "react-router-dom";
 
 export const ProjectGallery = () => {
-    const { projectList, loadProjects } = useProjectList();
-    const { typeList, loadTypes } = useProjectTypes();
-    useEffect(() => {
-        loadProjects();
-        loadTypes();
-    }, []);
-    const types = useMemo(() => typeList.map((it) => it.name), [typeList]);
+    const { types, projects } = useLoaderData() as { types: string[]; projects: Project.Project[] };
     const projectItems: GalleryItemProps[] = useMemo(
         () =>
-            projectList.map((it): GalleryItemProps => {
+            projects.map((it): GalleryItemProps => {
                 return {
                     title: it.title,
                     to: it.id,
@@ -24,7 +19,7 @@ export const ProjectGallery = () => {
                     tags: it.type?.map((it) => it.name),
                 };
             }),
-        [projectList]
+        [projects]
     );
 
     const [selectedTag, selectTag] = useState<Set<string>>(new Set());
