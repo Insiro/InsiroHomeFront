@@ -1,5 +1,5 @@
 import { SidebarItems } from "@/shared/type/SidebarItem";
-import { MediaQuery, SideBarSelector } from "@/shared/ui/constants";
+import { MediaQuery, SideBarSelector, Color } from "@/shared/ui/constants";
 import { Header } from "@/widgets/LayoutHeader";
 import { SpacialControl } from "@/widgets/LayoutSpacialControl";
 import { SearchModal } from "@/widgets/LayoutSpacialControl/ui/SearchModal/SearchModal";
@@ -11,7 +11,7 @@ type Props = {
     items: SidebarItems;
 };
 const PageSection = styled.div`
-    background: #f7f9fb;
+    background: ${Color.base};
     width: 100%;
     height: 100%;
     flex-grow: 1;

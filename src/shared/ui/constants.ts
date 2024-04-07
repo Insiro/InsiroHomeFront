@@ -12,3 +12,7 @@ export const MediaQuery = {
     Min766: `@media only screen and (min-width: 766px) `,
     MIN1200: `@media only screen and (min-width: 1200px)`,
 };
+
+export const Color = {
+    base: "#f7f9fb",
+};

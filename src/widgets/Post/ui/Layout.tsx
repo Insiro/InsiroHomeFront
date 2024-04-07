@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 
 import { ContentWrapper } from "@/shared/style";
-import { MediaQuery } from "@/shared/ui/constants";
+import { Color, MediaQuery } from "@/shared/ui/constants";
 import { Marked } from "@/widgets/Marked";
 import { PostHeaderWrapper, PostMeta } from "@/widgets/Post";
 import { SpacialSpacer } from "@/widgets/SpacialSpacer";
 
 const Wrapper = styled.div`
-    background: #f7f9fb;
+    background: ${Color.base};
     padding-left: 86px;
     height: 100%;
     display: flex;
@@ -31,7 +31,7 @@ interface Props {
     createdAt: string;
     status: string;
     tags: string[];
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export const PostLayout = ({ title, content, icon, createdAt, status, tags, children }: Props) => {
