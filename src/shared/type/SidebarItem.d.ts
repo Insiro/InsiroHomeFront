@@ -1,3 +1,5 @@
 import { RouteObject } from "react-router-dom";
 
-export type SidebarItems = { [key: string]: RouteObject };
+type SidebarRouteObject = RouteObject & { name: string };
+
+export type SidebarItems = SidebarRouteObject[];
