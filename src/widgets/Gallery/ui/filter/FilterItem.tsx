@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/shared/ui/constants";
+import { Color, MediaQuery } from "@/shared/ui/constants";
 import { css } from "@emotion/react";
 import { ReactNode, useMemo } from "react";
 
@@ -7,7 +7,7 @@ const ItemStyle = css`
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #898d90;
+    color: ${Color.text2};
     margin-right: 65px;
     cursor: pointer;
     padding: 10px 0;

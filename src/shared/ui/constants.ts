@@ -15,4 +15,7 @@ export const MediaQuery = {
 
 export const Color = {
     base: "#f7f9fb",
+    base1: "#f2f2f2",
+    base2: "#e6e6e6",
+    text2: "#898d90",
 };

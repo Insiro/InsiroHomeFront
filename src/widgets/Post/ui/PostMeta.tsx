@@ -1,3 +1,4 @@
+import { Color } from "@/shared/ui/constants";
 import styled from "@emotion/styled";
 import React from "react";
 import { ReactNode } from "react";
@@ -7,8 +8,8 @@ const Wrapper = styled.div`
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #898d90;
-    margin-bottom: 35px;
+    color: ${Color.text2};
+    margin-bottom: 30px;
     padding-top: 1rem;
 `;
 const ItemWrapper = styled.div`

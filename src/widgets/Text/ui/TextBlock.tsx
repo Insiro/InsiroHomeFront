@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/shared/ui/constants";
+import { Color, MediaQuery } from "@/shared/ui/constants";
 import styled from "@emotion/styled";
 export const TextBlock = styled.div`
     padding-left: 87px;
@@ -7,7 +7,7 @@ export const TextBlock = styled.div`
         font-size: 11px;
         font-weight: 700;
         text-transform: uppercase;
-        color: #898d90;
+        color: ${Color.text2};
         letter-spacing: 2px;
     }
     h2 {
