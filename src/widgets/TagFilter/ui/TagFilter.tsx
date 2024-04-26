@@ -27,7 +27,7 @@ type GalleryFilterProps = {
     multiselect?: boolean;
 };
 
-export const GalleryFilter = ({ items, selected, selector, multiselect }: GalleryFilterProps) => {
+export const TagFilter = ({ items, selected, selector, multiselect }: GalleryFilterProps) => {
     const selection = (key: string) => {
         if (multiselect != true) {
             selector(new Set([key]));

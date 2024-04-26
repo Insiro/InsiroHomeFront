@@ -7,7 +7,7 @@ export class ServerNotResponseError extends Error {
     }
 }
 
-export const serverAPI = axios.create({ baseURL: API.URL, withCredentials: true });
+export const serverAPI = axios.create({ baseURL: `${API.URL}/api`, withCredentials: true });
 serverAPI.interceptors.response.use(
     (response) => response,
     (error) => {
