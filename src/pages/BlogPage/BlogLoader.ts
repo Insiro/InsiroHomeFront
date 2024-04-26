@@ -9,8 +9,8 @@ export const BlogPostLoader: LoaderFunction = async ({ params }) => {
         throw new Response("NotFound", { status: 404 });
     });
 };
-export const BlogLoader: LoaderFunction = async () => {
-    const posts = PostApi.getAll();
-    const category = CategoryApi.getAll();
+export const BlogListLoader: LoaderFunction = async () => {
+    const posts = await PostApi.getAll();
+    const category = await CategoryApi.getAll();
     return { posts: posts, category: category };
 };
