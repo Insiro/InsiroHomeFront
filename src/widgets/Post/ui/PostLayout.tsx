@@ -1,28 +1,10 @@
-import styled from "@emotion/styled";
 import { ReactNode } from "react";
 
 import { ContentWrapper } from "@/shared/style";
-import { Color, MediaQuery } from "@/shared/ui/constants";
 import { Marked } from "@/widgets/Marked";
 import { PostHeaderWrapper, PostMeta } from "@/widgets/Post";
 import { SpacialSpacer } from "@/widgets/SpacialSpacer";
-
-const Wrapper = styled.div`
-    background: ${Color.base};
-    padding-left: 86px;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    ${MediaQuery.Min768Max991} {
-        padding-right: 50px;
-    }
-    ${MediaQuery.Max767} {
-        padding-left: 50px;
-    }
-    ${MediaQuery.Max479} {
-        padding-left: 15px;
-    }
-`;
+import { PostsWrapper } from "./PostsWrapper";
 
 interface Props {
     title: string;
@@ -36,7 +18,7 @@ interface Props {
 
 export const PostLayout = ({ title, content, icon, createdAt, status, tags, children }: Props) => {
     return (
-        <Wrapper>
+        <PostsWrapper>
             <PostHeaderWrapper>
                 {icon && <img style={{ height: "100px" }} src={icon} />}
                 <h1>{title}</h1>
@@ -54,6 +36,6 @@ export const PostLayout = ({ title, content, icon, createdAt, status, tags, chil
                 <Marked value={content} />
                 {children}
             </ContentWrapper>
-        </Wrapper>
+        </PostsWrapper>
     );
 };
