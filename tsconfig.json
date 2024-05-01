@@ -19,7 +19,8 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "paths": { "@/*": ["./src/*"], "@assets/*": ["./src/assets/*"] }
+        "paths": { "@/*": ["./src/*"], "@assets/*": ["./src/assets/*"] },
+        "jsxImportSource": "@emotion/react"
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]
