@@ -2,6 +2,7 @@ import Markdown from "marked-react";
 import { useMemo } from "react";
 
 import "highlight.js/styles/default.css";
+//@ts-expect-error: TS7016
 import Lowlight from "react-lowlight";
 import "react-lowlight/common";
 import styled from "@emotion/styled";
@@ -16,6 +17,7 @@ const renderer = {
     code(snippet: any, lang: any) {
         return (
             <Wrapper>
+                {/* @ts-expect-error: TS2339 */}
                 <Lowlight key={this.elementId} language={lang} value={snippet} />
             </Wrapper>
         );
