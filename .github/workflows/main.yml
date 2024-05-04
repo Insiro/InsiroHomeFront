@@ -1,0 +1,33 @@
+name: build and deploy
+on:
+    push:
+        branches: [ main ]
+    workflow_dispatch:
+
+jobs:
+  my-job:
+    name: my-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        
+      - name: setup bun.js
+        uses: oven-sh/setup-bun@v1
+        
+      - name: install dependencies
+        run: bun install && bun builds
+
+      - name: SSH deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_IP }}
+          username: ${{ secrets.REMOTE_SSH_ID }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd ~/temp/front
+            git pull
+            bun install & bun builds
+            rm -r /data/server_data/homeServer/front
+            cp -r /data/server_data/homeServer/front
