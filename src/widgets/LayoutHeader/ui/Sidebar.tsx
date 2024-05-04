@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import { handleSidebar } from "@/features/header/state";
 import MenuIcon from "@/shared/assets/menu-icon.png";
 import { SidebarItems } from "@/shared/type/SidebarItem";
 
@@ -32,7 +33,7 @@ const Item = (props: { children: ReactNode; href: string }) => {
     return (
         <>
             <li css={[ItemStyle, isActive && { borderBottom: "2px solid #000000" }]}>
-                <Link to={props.href} style={{ textDecoration: "none", color: "#323232" }}>
+                <Link to={props.href}  onClick={()=>handleSidebar(false)}  style={{ textDecoration: "none", color: "#323232" }}>
                     {props.children}
                 </Link>
             </li>

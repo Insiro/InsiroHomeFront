@@ -43,6 +43,7 @@ const CloseBtn = () => {
                 right: 25px;
                 top: 10px;
                 color: #999;
+                font-size: 21px;
                 ${MediaQuery.Max991} {
                     display: none;
                     position: fixed;
@@ -52,7 +53,7 @@ const CloseBtn = () => {
                 }
             `}
         >
-            <i className="fa fa-times"></i>
+            x
         </div>
     );
 };

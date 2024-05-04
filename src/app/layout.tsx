@@ -20,7 +20,7 @@ const PageSection = styled.div`
     padding-right: 30px;
     box-sizing: border-box;
     ${MediaQuery.Max991} {
-        ${SideBarSelector}& {
+        ${SideBarSelector} & {
             display: none;
         }
     }
