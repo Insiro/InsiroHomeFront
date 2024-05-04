@@ -57,7 +57,7 @@ export const SideBar = (props: { sidebarItems: SidebarItems }) => {
 
             <img src={MenuIcon} style={{ paddingLeft: "63px", marginBottom: "29px" }} />
             <nav>
-                <ul style={{ listStyle: "none", marginBottom: "65px" }}>
+                <ul style={{ listStyle: "none", margin: "0px", marginBottom: "65px", padding: "0px" }}>
                     {props.sidebarItems.map((item) => (
                         <Item key={item.name} href={item.path!}>
                             {item.name}
