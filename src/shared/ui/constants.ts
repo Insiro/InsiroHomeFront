@@ -18,4 +18,5 @@ export const Color = {
     base1: "#f2f2f2",
     base2: "#e6e6e6",
     text2: "#898d90",
+    text5: "#323232",
 };
