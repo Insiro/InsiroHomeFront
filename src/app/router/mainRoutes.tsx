@@ -2,7 +2,7 @@ import { RouteObject } from "react-router-dom";
 
 import { BlogPostLoader, BlogPostPage } from "@/pages/BlogPage";
 import { ProjectDetail, loadProject } from "@/pages/ProjectPage";
-
+import { LoginPage } from "@/pages/Auth";
 export const MainRoutes: RouteObject[] = [
     {
         path: "projects/:id",
@@ -10,4 +10,5 @@ export const MainRoutes: RouteObject[] = [
         loader: loadProject,
     },
     { path: "/blogs/:id", element: <BlogPostPage />, loader: BlogPostLoader },
+    { path: "/auth", element: <LoginPage /> },
 ];
