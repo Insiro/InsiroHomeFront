@@ -1,12 +1,12 @@
 import { AuthApi, User } from "@/entities/user";
 import { atom, useRecoilState } from "recoil";
-export const userState = atom<User.SimpleUser | null>({
-    key: "user",
+export const authState = atom<User.DetailedUser | null>({
+    key: "authState",
     default: null,
 });
 export const useAuth = () => {
-    const [user, setUser] = useRecoilState(userState);
-    const login = async (id: string, passwd: string): Promise<User.SimpleUser | null> => {
+    const [user, setUser] = useRecoilState(authState);
+    const login = async (id: string, passwd: string): Promise<User.DetailedUser | null> => {
         try {
             setUser(await AuthApi.SignIn({ name: id, password: passwd }));
             return user;
@@ -26,5 +26,10 @@ export const useAuth = () => {
         setUser(null);
     };
 
-    return { user, login, updateSigned, signOut };
+    const logOut = () => {
+        AuthApi.signOut();
+        setUser(null);
+    };
+
+    return { user, login, updateSigned, signOut, logOut };
 };

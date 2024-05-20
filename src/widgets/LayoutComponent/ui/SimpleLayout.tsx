@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 const Wrapper = styled.div`
     max-width: 1260px;
     padding: 0 47px 105px 135px;
@@ -17,9 +17,13 @@ const Content = styled.div`
         padding-right: 0;
     }
 `;
+interface Props {
+    children: ReactNode;
+    css?: CSSProperties;
+}
 
-export const SimpleLayout = ({ children }: { children: ReactNode }) => (
-    <div style={{ paddingTop: "190px" }}>
+export const SimpleLayout = ({ children, css }: Props) => (
+    <div css={{ paddingTop: "190px", ...css }}>
         <Wrapper>
             <Content>{children}</Content>
         </Wrapper>

@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { useAuth } from "@/features/auth";
 import { ErrorPage } from "@/pages/ErrorPage";
 import { Layout } from "../layout";
 import { MainRoutes } from "./mainRoutes";
@@ -21,4 +23,11 @@ const router = createBrowserRouter([
         ),
     },
 ]);
-export const MainRouter = () => <RouterProvider router={router} />;
+
+export const MainRouter = () => {
+    const { updateSigned } = useAuth();
+    useEffect(() => {
+        updateSigned();
+    }, [updateSigned]);
+    return <RouterProvider router={router} />;
+};
