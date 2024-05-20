@@ -1,6 +1,6 @@
 import { useAuth } from "@/features/auth";
 import { buttonStyle } from "@/shared/style";
-import { SimpleLayout } from "@/widgets/LayoutSimpleContent";
+import { SimpleLayout } from "@/widgets/LayoutComponent";
 import { TextInput, InputEvent } from "@/widgets/Text";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

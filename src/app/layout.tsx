@@ -1,8 +1,6 @@
 import { SidebarItems } from "@/shared/type/SidebarItem";
-import { MediaQuery, SideBarSelector, Color } from "@/shared/ui/constants";
-import { Header } from "@/widgets/LayoutHeader";
-import { SpacialControl } from "@/widgets/LayoutSpacialControl";
-import { SearchModal } from "@/widgets/LayoutSpacialControl/ui/SearchModal/SearchModal";
+import { Color, MediaQuery, SideBarSelector } from "@/shared/ui/constants";
+import { Header, SearchModal, SpacialControl } from "@/widgets/LayoutComponent";
 import styled from "@emotion/styled";
 import { ReactNode } from "react";
 

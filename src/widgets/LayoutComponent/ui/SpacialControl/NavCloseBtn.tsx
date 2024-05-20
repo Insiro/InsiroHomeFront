@@ -1,7 +1,8 @@
-import { handleSidebar } from "@/features/header/state";
-import { MediaQuery, SideBarSelector } from "@/shared/ui/constants";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+
+import { handleSidebar } from "@/features/header/state";
+import { MediaQuery, SideBarSelector } from "@/shared/ui/constants";
 
 const NsButton = styled.div`
     display: block;

@@ -1,1 +1,0 @@
-export { SimpleLayout } from "./ui";

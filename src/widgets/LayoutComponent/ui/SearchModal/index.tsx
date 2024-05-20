@@ -2,6 +2,7 @@ import { useSearchModal } from "@/features/header/state";
 import { css } from "@emotion/react";
 import { ModelClose } from "./ModalClose";
 import { SearchForm } from "./SearchForm";
+
 const WrapperStyle = css`
     position: fixed;
     width: 100%;

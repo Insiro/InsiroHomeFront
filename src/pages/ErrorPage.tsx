@@ -1,4 +1,4 @@
-import { SimpleLayout } from "@/widgets/LayoutSimpleContent";
+import { SimpleLayout } from "@/widgets/LayoutComponent";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 const Error = (props: { status?: number; desc: string }) => (
