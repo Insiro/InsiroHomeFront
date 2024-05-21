@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
 import { buttonStyle } from "@/shared/style";
-import { Centralizer } from "@/widgets/Centralizer";
+import { Centralizer } from "@/widgets/LayoutComponent";
 
 export type GalleryItemProps = {
     to: string;
