@@ -7,9 +7,9 @@ import { Color, MediaQuery } from "@/shared/ui/constants";
 export type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
 export const TextInput = styled.input`
+    max-width: 500px;
     width: 100%;
     height: 40px;
-    margin-top: 16px;
     line-height: 40px;
     border: 0;
     border-bottom: 1px solid;
@@ -24,7 +24,7 @@ interface LineProps extends ComponentProps<"input"> {
     wrong?: boolean;
 }
 const LabelHeader = styled.h3`
-    margin-top: 16px;
+    margin: 8px 0 8px 0;
     min-width: 150px;
     color: ${Color.text2};
 `;
@@ -44,7 +44,10 @@ export const LabeledInput = ({ stateUpdater: setter = () => {}, wrong = false, .
     return (
         <Label>
             <LabelHeader>{props.title}</LabelHeader>
-            <TextInput css={[InputStyle, wrong && { borderBlockColor: "red" }]} value={props.value || ""} disabled={props.disabled} type={props.type} onChange={onChange} />
+            <div css={InputStyle}>
+                <TextInput css={[wrong && { borderBlockColor: "red" }]} value={props.value || ""} disabled={props.disabled} type={props.type} onChange={onChange} {...props} />
+                {props.children}
+            </div>
         </Label>
     );
 };

@@ -1,10 +1,15 @@
 import { KeyboardEventHandler, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "@emotion/styled";
 
 import { useAuth } from "@/features/auth";
 import { buttonStyle } from "@/shared/style";
 import { SimpleLayout } from "@/widgets/LayoutComponent";
-import { InputEvent, TextInput } from "@/widgets/Text";
+import { InputEvent, LabeledInput } from "@/widgets/Text";
+
+const Spacer = styled.div`
+    height: 3rem;
+`;
 
 export const LoginPage = () => {
     const [uName, setUserName] = useState("");
@@ -16,7 +21,7 @@ export const LoginPage = () => {
 
     useEffect(() => {
         if (user != null) redirect("/user");
-    }, [user]);
+    }, [user, redirect]);
 
     const loginAction = async () => {
         if ((await login(uName, pwd)) == null) alert("Failed to Sign In");
@@ -29,14 +34,13 @@ export const LoginPage = () => {
     return (
         <SimpleLayout>
             <h1>Login</h1>
-            <br />
-            <TextInput value={uName} onChange={handleIdChanged} placeholder="UserName" onKeyDown={handleKeyPress} />
-            <TextInput value={pwd} onChange={handlePwdChanged} type="Password" placeholder="password" onKeyDown={handleKeyPress} />
-            <br />
-            <br />
-            <div css={buttonStyle.Default} onClick={loginAction}>
+            <Spacer />
+            <LabeledInput value={uName} onChange={handleIdChanged} placeholder="UserName" onKeyDown={handleKeyPress} title="ID" />
+            <LabeledInput value={pwd} onChange={handlePwdChanged} type="Password" placeholder="password" onKeyDown={handleKeyPress} title="Password" />
+            <Spacer />
+            <button css={buttonStyle.Default} onClick={loginAction}>
                 Login
-            </div>
+            </button>
         </SimpleLayout>
     );
 };

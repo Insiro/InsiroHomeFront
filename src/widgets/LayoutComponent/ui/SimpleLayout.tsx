@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { CSSProperties, ReactNode } from "react";
 const Wrapper = styled.div`
     max-width: 1260px;
-    padding: 0 47px 105px 135px;
+    padding: 160px 47px 105px 135px;
     @media (max-width: 1350px) {
         padding-left: 30px;
         padding-right: 60px;
@@ -23,9 +23,7 @@ interface Props {
 }
 
 export const SimpleLayout = ({ children, css }: Props) => (
-    <div css={{ paddingTop: "190px", ...css }}>
-        <Wrapper>
-            <Content>{children}</Content>
-        </Wrapper>
-    </div>
+    <Wrapper css={{ ...css }}>
+        <Content>{children}</Content>
+    </Wrapper>
 );
