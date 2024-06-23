@@ -2,7 +2,7 @@ import { CreatedAt, Status, WithDeleteFile, WithId, WithStatus } from "../../uti
 import { ProjectType } from "./ProjectType";
 interface Base extends WithId {
     title: string;
-    content: string;
+    content?: string;
     type?: ProjectType[];
     icon?: string; //TODO: Server must Impl Icon Path on DB
 }

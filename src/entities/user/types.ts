@@ -19,4 +19,6 @@ export interface UpdateUser extends WithLongId {
     email?: Email;
 }
 
-export interface DetailedUser extends SimpleUser, CreatedAt {}
+export interface DetailedUser extends SimpleUser, CreatedAt {
+    email: Email;
+}

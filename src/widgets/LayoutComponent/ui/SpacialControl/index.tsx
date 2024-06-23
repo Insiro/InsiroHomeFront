@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { SearchBtn } from "./SearchBtn";
-import { NavCloseBtn } from "./NavCloseBtn";
+
 import { MediaQuery } from "@/shared/ui/constants";
+import { NavCloseBtn } from "./NavCloseBtn";
+import { SearchBtn } from "./SearchBtn";
 
 const ControlWrapper = styled.div`
     position: fixed;

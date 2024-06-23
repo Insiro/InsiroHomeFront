@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { Project } from "@/entities/projects";
 import { ContentWrapper } from "@/shared/style";
 import { Gallery, GalleryItemProps } from "@/widgets/Gallery";
-import { SpacialSpacer } from "@/widgets/SpacialSpacer";
+import { SpacialSpacer } from "@/widgets/LayoutComponent";
 import { TagFilter } from "@/widgets/TagFilter";
 
 export const ProjectGallery = () => {
@@ -14,7 +14,7 @@ export const ProjectGallery = () => {
             projects.map((it): GalleryItemProps => {
                 return {
                     title: it.title,
-                    to: it.id,
+                    to: it.title,
                     image: it.icon,
                     tags: it.type?.map((it) => it.name),
                 };

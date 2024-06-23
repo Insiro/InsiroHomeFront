@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { ContentWrapper } from "@/shared/style";
 import { Marked } from "@/widgets/Marked";
 import { PostHeaderWrapper, PostMeta } from "@/widgets/Post";
-import { SpacialSpacer } from "@/widgets/SpacialSpacer";
+import { SpacialSpacer } from "@/widgets/LayoutComponent";
 import { PostsWrapper } from "./PostsWrapper";
 
 interface Props {
