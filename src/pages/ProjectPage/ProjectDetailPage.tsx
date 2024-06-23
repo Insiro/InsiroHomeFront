@@ -10,7 +10,7 @@ export const ProjectDetail = () => {
     const tags = useMemo(() => {
         return project.type?.map((it) => it.name) || [];
     }, [project]);
-    const content = useMemo(() => project.content.replaceAll("~/", `/static${pathname}/`), [pathname, project.content]);
+    const content = useMemo(() => project.content?.replaceAll("~/", `/static${pathname}/`) || "", [pathname, project.content]);
 
     return <PostLayout title={project.title} createdAt={project.createdAt} status={project.status} tags={tags} content={content} />;
 };
