@@ -14,7 +14,7 @@ export const ProjectGallery = () => {
             projects.map((it): GalleryItemProps => {
                 return {
                     title: it.title,
-                    to: it.id,
+                    to: it.title,
                     image: it.icon,
                     tags: it.type?.map((it) => it.name),
                 };

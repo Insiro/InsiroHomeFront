@@ -5,7 +5,7 @@ import { buttonStyle } from "@/shared/style";
 import { Centralizer } from "@/widgets/LayoutComponent";
 
 export type GalleryItemProps = {
-    to: string;
+    to:string;
     image?: string;
     title: string;
     tags?: string[];
@@ -79,7 +79,7 @@ export const GalleryItem = (props: GalleryItemProps | FilteredItemProps) => {
             )}
 
             <div className="hover-links">
-                <Link to={props.to} css={buttonStyle.Light}>
+                <Link to={props.title} css={buttonStyle.Light}>
                     about
                 </Link>
             </div>
