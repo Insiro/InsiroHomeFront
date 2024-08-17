@@ -33,7 +33,7 @@ const Item = (props: { children: ReactNode; href: string }) => {
     return (
         <>
             <li css={[ItemStyle, isActive && { borderBottom: "2px solid #000000" }]}>
-                <Link to={props.href}  onClick={()=>handleSidebar(false)}  style={{ textDecoration: "none", color: "#323232" }}>
+                <Link to={props.href} onClick={() => handleSidebar(false)} style={{ textDecoration: "none", color: "#323232" }}>
                     {props.children}
                 </Link>
             </li>
@@ -53,7 +53,7 @@ export const SideBar = (props: { sidebarItems: SidebarItems }) => {
     return (
         <HeaderWarp>
             <Link css={LogoStyle} to="/">
-                <h1>Insiro</h1>
+                <img src="/logo colored.png" style={{ maxWidth: "80%" }} />
             </Link>
 
             <img src={MenuIcon} style={{ paddingLeft: "63px", marginBottom: "29px" }} />

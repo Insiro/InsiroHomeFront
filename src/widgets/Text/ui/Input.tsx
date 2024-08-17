@@ -42,7 +42,7 @@ export const LabeledInput = ({ stateUpdater: setter = () => {}, wrong = false, .
     const onChange = (e: InputEvent) => setter(e.target.value);
 
     return (
-        <Label>
+        <Label style={props.style}>
             <LabelHeader>{props.title}</LabelHeader>
             <div css={InputStyle}>
                 <TextInput css={[wrong && { borderBlockColor: "red" }]} value={props.value || ""} disabled={props.disabled} type={props.type} onChange={onChange} {...props} />

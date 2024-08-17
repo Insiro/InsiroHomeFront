@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode } from "react";
 
-export const BlockTitle = (props: { children: ReactNode; style: CSSProperties }) => {
+export const BlockTitle = (props: { children: ReactNode; style?: CSSProperties }) => {
     return (
         <h3
             style={{
