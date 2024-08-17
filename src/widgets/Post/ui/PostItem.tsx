@@ -42,13 +42,15 @@ interface Props {
     status: string;
     tags?: string[];
     selected?: Set<string>;
+    domain?: string;
 }
 
-export const PostList = ({ id, title, icon, createdAt, status, tags, selected }: Props) => {
+export const PostItem = ({ id, title, icon, createdAt, status, tags, selected, domain }: Props) => {
     const activate = useMemo(() => isActivated(tags, selected), [tags, selected]);
+    const d = domain ? domain + "/" : "";
     return (
         <PostsWrapper css={[WrapperStyle, activate || Disabled]}>
-            <Link style={{ textDecoration: "none" }} to={id}>
+            <Link style={{ textDecoration: "none" }} to={d + id}>
                 {icon && <img css={PostIcon} src={icon} />}
                 <PostHeaderWrapper>
                     <h3 style={{ marginBottom: "0.2rem" }}>{title}</h3>
