@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import { SideBar } from "./Sidebar";
 
 const HeaderSectionStyle = css`
-    width: 455px;
+    width: 305px;
     height: 100%;
     background: #fff;
     left: 0;

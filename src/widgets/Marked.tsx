@@ -10,9 +10,12 @@ import styled from "@emotion/styled";
 const CodeWrapper = styled.div`
     width: fit-content;
     min-width: 50%;
+    max-width: 100%;
+    overflow-x: scroll;
 `;
 
 const Wrapper = styled.div`
+    max-width: 100%;
     img {
         max-width: 50%;
         max-height: 400px;
